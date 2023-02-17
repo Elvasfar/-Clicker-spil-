@@ -34,7 +34,7 @@ img {
   height: auto;
   position: absolute;
   bottom: 8%;
-  left: 20%;
+  right: -10%;
 }
 
 #baby_med_sut_container {
@@ -56,7 +56,7 @@ img {
   height: auto;
   position: absolute;
   bottom: 20%;
-  left: 60%;
+  right: -10%;
 }
 #teddybears_container {
   width: 30%;
@@ -66,20 +66,12 @@ img {
   right: 30%;
 }
 
-#teenager_container2 {
-  width: 7%;
-  height: auto;
-  position: absolute;
-  bottom: 20%;
-  left: 40%;
-}
-
 #teenager_container3 {
-  width: 7%;
+  width: 9%;
   height: auto;
   position: absolute;
   bottom: 10%;
-  left: 80%;
+  right: -10%;
 }
 
 #Hjerte1_container {
