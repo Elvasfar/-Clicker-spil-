@@ -15,15 +15,109 @@ img {
   grid-area: 1 / 1;
   overflow: hidden;
   display: grid;
-  grid: 100%, 100%;
+  grid-template-columns: 10%/10%;
+  grid-template-rows: 100%;
 }
 #game_background {
   grid-area: 1 / 1;
-  background-image: url(Baggrund.jpg);
+  background-image: url(img/Baggrund2.jpg);
   background-size: cover;
 }
 #game_elements {
   grid-area: 1 / 1;
   position: relative;
   overflow: hidden;
+}
+
+#baby_container {
+  width: 8%;
+  height: auto;
+  position: absolute;
+  bottom: 8%;
+  left: 20%;
+}
+
+#baby_med_sut_container {
+  width: 8%;
+  height: auto;
+  position: absolute;
+  bottom: 20%;
+  left: 70%;
+}
+#blocks_container {
+  width: 15%;
+  height: auto;
+  position: absolute;
+  top: 55%;
+  left: 10%;
+}
+#teenager_container {
+  width: 7%;
+  height: auto;
+  position: absolute;
+  bottom: 20%;
+  left: 60%;
+}
+#teddybears_container {
+  width: 30%;
+  height: auto;
+  position: absolute;
+  top: 72%;
+  right: 30%;
+}
+
+#teenager_container2 {
+  width: 7%;
+  height: auto;
+  position: absolute;
+  bottom: 20%;
+  left: 40%;
+}
+
+#teenager_container3 {
+  width: 7%;
+  height: auto;
+  position: absolute;
+  bottom: 10%;
+  left: 80%;
+}
+
+#Hjerte1_container {
+  width: 7%;
+  height: auto;
+  position: absolute;
+  top: 1%;
+  right: 1%;
+}
+
+#Hjerte2_container {
+  width: 7%;
+  height: auto;
+  position: absolute;
+  top: 1%;
+  right: 5%;
+}
+
+#Hjerte3_container {
+  width: 7%;
+  height: auto;
+  position: absolute;
+  top: 1%;
+  right: 9%;
+}
+
+#pacifier_container {
+  width: 2%;
+  height: auto;
+  position: absolute;
+  top: 50%;
+  right: 50%;
+}
+
+#baby-bottle_container {
+  width: 7%;
+  height: auto;
+  position: absolute;
+  top: 1%;
+  right: 45%;
 }
