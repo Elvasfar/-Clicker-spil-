@@ -26,6 +26,28 @@
   }
 }
 
+.babyclick {
+  animation-name: babyclick;
+  animation-duration: 2s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}
+@keyframes babyclick {
+  0% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(0.5);
+  }
+  100% {
+    transform: scale(0);
+  }
+}
+.paused {
+  animation-play-state: paused;
+}
+
 .teenager_animation {
   animation-name: teenager;
   animation-duration: 10s;
@@ -51,6 +73,55 @@
   100% {
     transform: translate(-1750%, 80%);
   }
+}
+
+.teenagerclick {
+  animation-name: teenagerclick;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+  animation-fill-mode: forwards;
+  image-rendering: smooth;
+  animation-timing-function: linear;
+}
+@keyframes teenagerclick {
+  0% {
+    transform: scale(1);
+    rotate: (0deg);
+  }
+
+  10% {
+    transform: rotate(-10deg);
+  }
+  20% {
+    transform: rotate(10deg);
+  }
+  30% {
+    transform: rotate(-10deg);
+  }
+  40% {
+    transform: rotate(10deg);
+  }
+  50% {
+    transform: rotate(-10deg);
+  }
+  60% {
+    transform: rotate(10deg);
+  }
+  70% {
+    transform: rotate(-10deg);
+  }
+  80% {
+    transform: rotate(10deg);
+  }
+  90% {
+    transform: rotate(-10deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+.paused {
+  animation-play-state: paused;
 }
 
 .teenager_animation3 {
@@ -81,4 +152,52 @@
   100% {
     transform: translate(-1500%, 20%);
   }
+}
+
+.teenager3click {
+  animation-name: teenager3click;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+  animation-fill-mode: forwards;
+}
+@keyframes teenager3click {
+  0% {
+    transform: scale(1);
+    rotate: (0deg);
+  }
+
+  10% {
+    transform: rotate(-10deg);
+  }
+  20% {
+    transform: rotate(10deg);
+  }
+  30% {
+    transform: rotate(-10deg);
+  }
+  40% {
+    transform: rotate(10deg);
+  }
+  50% {
+    transform: rotate(-10deg);
+  }
+  60% {
+    transform: rotate(10deg);
+  }
+  70% {
+    transform: rotate(-10deg);
+  }
+  80% {
+    transform: rotate(10deg);
+  }
+  90% {
+    transform: rotate(-10deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+.paused {
+  animation-play-state: paused;
 }
