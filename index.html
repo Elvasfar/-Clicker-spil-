@@ -15,7 +15,7 @@
         <div id="game_background"></div>
         <div id="game_elements">
           <div id="baby_container" class="Baby_animation">
-            <img id="baby_sprite"class="babyclick" src="img/Baby.png" alt="" />
+            <img id="baby_sprite" src="img/Baby.png" alt="" />
           </div>
           <div id="baby_med_sut_container">
             <img id="baby_med_sut_sprite" src="img/Baby med sut.png" alt="" />
@@ -27,20 +27,11 @@
             <img id="teddybears_sprite" src="img/Mellemgrund.png" alt="" />
           </div>
           <div id="teenager_container" class="teenager_animation">
-            <img id="teenager_sprite" class="teenagerclick" src="img/Teenager.png" />
+            <img id="teenager_sprite" src="img/Teenager.png" />
           </div>
         
             <div id="teenager_container3" class="teenager_animation3">
-            <img  id="teenager_sprite3" class="teenager3click" src="img/Teenager3.png" />
-            </div>
-            <div id="Hjerte1_container">
-            <img id="Hjerte_sprite1" src="img/Hjerte1.png" />
-            </div>
-            <div id="Hjerte2_container">
-            <img id="Hjerte_sprite2" src="img/Hjerte 2.png" />
-            </div>
-            <div id="Hjerte3_container">
-            <img id="Hjerte_sprite3" src="img/Hjerte3.png" />
+            <img  id="teenager_sprite3" src="img/Teenager3.png" />
             </div>
             <div id="pacifier_container">
             <img id="pacifier_sprite" src="img/pacifier.png" />
@@ -51,6 +42,14 @@
 
             <div id="game_foreground"></div>
             <div id="game_ui">
+                <div id="pointBoard">
+            <p id="point">0</p>
+                </div>
+              <div id="lifeBoard">
+            <img id="Heart1" src="img/Hjerte1.png" class="active_heart" />       
+            <img id="Heart2" src="img/Hjerte1.png" class="active_heart" />       
+            <img id="Heart3" src="img/Hjerte1.png" class="active_heart"/>
+              </div>  
             </div>
             
           </div>
@@ -60,5 +59,6 @@
         <div id="level_complete"></div>
       </div>
     </div>
+    <script src="app.js"></script>
   </body>
 </html>
