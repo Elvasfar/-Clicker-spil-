@@ -28,7 +28,7 @@ document
   .addEventListener("click", clickteenager);
 document
   .querySelector("#teenager_container3")
-  .addEventListener("click", clickteenager);
+  .addEventListener("click", clickteenager3);
 
 //=============+--funktioner=============//
 function incrementPoints() {
@@ -83,23 +83,31 @@ function clickteenager() {
   document
     .querySelector("#teenager_container")
     .removeEventListener("click", clickteenager);
-  document
-    .querySelector("#teenager_container3")
-    .removeEventListener("click", clickteenager);
 
   decrementLives();
 
   document.querySelector("#teenager_container").classList.add("paused");
   document.querySelector("#teenager_sprite").classList.add("teenagerclick");
-  document.querySelector("#teenager_container3").classList.add("paused");
-  document.querySelector("#teenager_sprite3").classList.add("teenager3click");
   document
     .querySelector("#teenager_container")
     .addEventListener("animationend", teenagerGone);
+}
+function clickteenager3() {
+  console.log("Click teenager3");
+  // Forhindr gentagne clicks
   document
     .querySelector("#teenager_container3")
-    .addEventListener("animationend", teenagerGone);
+    .removeEventListener("click", clickteenager3);
+
+  decrementLives();
+
+  document.querySelector("#teenager_container3").classList.add("paused");
+  document.querySelector("#teenager_sprite3").classList.add("teenager3click");
+  document
+    .querySelector("#teenager_container3")
+    .addEventListener("animationend", teenagerGone3);
 }
+
 function decrementLives() {
   console.log("decrementLives");
   lives = lives - 1;
@@ -108,7 +116,7 @@ function decrementLives() {
 }
 
 function displaydecrementedLives() {
-  console.log(`#heart${lives}`);
+  console.log(`#heart${lives + 1}`);
   document.querySelector(`#heart${lives + 1}`).classList.remove("active_heart");
   document.querySelector(`#heart${lives + 1}`).classList.add("broken_heart");
 }
@@ -118,40 +126,39 @@ function teenagerGone() {
   document
     .querySelector("#teenager_container")
     .removeEventListener("animationend", teenagerGone);
-  document
-    .querySelector("#teenager_container3")
-    .removeEventListener("animationend", teenagerGone);
 
   // fjern forsvind-animation
   document.querySelector("#teenager_sprite").classList.remove("teenagerclick");
-  document.querySelector("#teenager_sprite3").classList.remove("teenagerclick");
 
   // fjern pause
   document.querySelector("#teenager_container").classList.remove("paused");
-  document.querySelector("#teenager_container3").classList.remove("paused");
 
   // genstart falling animation
-  document
-    .querySelector("#teenager_container")
-    .classList.remove("teenager_animation");
-  document.querySelector("#teenager_container").offsetWidth;
-  document
-    .querySelector("#teenager_container")
-    .classList.add("teenager_animation");
-
-  document
-    .querySelector("#teenager_container3")
-    .classList.remove("teenager_animation3");
-  document.querySelector("#teenager_container3").offsetWidth;
-  document
-    .querySelector("#teenager_container3")
-    .classList.add("teenager_animation3");
 
   // gør det muligt at klikke på teenager igen
   document
     .querySelector("#teenager_container")
-    .addEventListener("click", teenagerclick);
+    .addEventListener("click", clickteenager);
+}
+
+function teenagerGone3() {
+  // fjern event der bringer os herind
   document
     .querySelector("#teenager_container3")
-    .addEventListener("click", teenagerclick);
+    .removeEventListener("animationend", teenagerGone3);
+
+  // fjern forsvind-animation
+  document
+    .querySelector("#teenager_sprite3")
+    .classList.remove("teenager3click");
+
+  // fjern pause
+  document.querySelector("#teenager_container3").classList.remove("paused");
+
+  // genstart falling animation
+
+  // gør det muligt at klikke på teenager igen
+  document
+    .querySelector("#teenager_container3")
+    .addEventListener("click", clickteenager3);
 }

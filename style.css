@@ -31,10 +31,15 @@ img {
 
 #baby_container {
   width: 8%;
-  height: auto;
   position: absolute;
   bottom: 8%;
   right: -10%;
+  z-index: 2;
+}
+
+#baby_sprite {
+  width: 100%;
+  aspect-ratio: 1/1;
 }
 
 #baby_med_sut_container {
@@ -50,13 +55,18 @@ img {
   position: absolute;
   top: 55%;
   left: 10%;
+  z-index: 1;
 }
 #teenager_container {
   width: 7%;
-  height: auto;
   position: absolute;
   bottom: 20%;
   right: -10%;
+  z-index: 3;
+}
+#teenager_sprite {
+  width: 100%;
+  aspect-ratio: 1/2;
 }
 #teddybears_container {
   width: 30%;
@@ -64,14 +74,19 @@ img {
   position: absolute;
   top: 72%;
   right: 30%;
+  z-index: 5;
 }
 
 #teenager_container3 {
   width: 9%;
-  height: auto;
   position: absolute;
   bottom: 10%;
   right: -10%;
+  z-index: 4;
+}
+#teenager_sprite3 {
+  width: 100%;
+  aspect-ratio: 1/2;
 }
 
 #lifeBoard {
