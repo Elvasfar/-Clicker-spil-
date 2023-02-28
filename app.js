@@ -112,6 +112,9 @@ function decrementLives() {
   console.log("decrementLives");
   lives = lives - 1;
   console.log(lives);
+  if (lives <= 0) {
+    gameOver();
+  }
   displaydecrementedLives();
 }
 
@@ -161,4 +164,13 @@ function teenagerGone3() {
   document
     .querySelector("#teenager_container3")
     .addEventListener("click", clickteenager3);
+}
+function gameOver() {
+  console.log(game_over);
+  document.querySelector("#game_over").classList.remove("hidden");
+  displayPoints();
+}
+
+function displayPoints() {
+  document.querySelector("#point").textContent = point;
 }

@@ -12,6 +12,7 @@
   <body>
     <div id="screen">
       <div id="game">
+        <div class="custom-cursor"></div>
         <div id="game_background"></div>
         <div id="game_elements">
           <div id="baby_container" class="Baby_animation">
@@ -54,14 +55,17 @@
 
                 <!--<a href="https://www.freepik.com/free-vector/blank-business-card-mockup-vector-white-tone_16264082.htm#query=white%20rectangle&position=4&from_view=search&track=ais">Image by rawpixel.com</a> on Freepik-->
             <div id="time_left"></div>
+
           </div> 
             </div>
             
           </div>
         </div>
         <div id="start"></div>
-        <div id="game_over"></div>
-        <div id="level_complete"></div>
+        <div id="game_over" class="hidden">
+            <h1 class="tekst">Game Over</h1>
+        </div>
+        <div id="level_complete" class="hidden"></div>
       </div>
     </div>
     <script src="app.js"></script>
