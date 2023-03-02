@@ -61,13 +61,25 @@
             
           </div>
         </div>
-        <div id="start"></div>
+        <div id="start">
+          <h1>Baby-Berserk</h1>
+          <p>Give the babies their pacifiers,<br>
+            but avoid giving the pacifier <br>
+             to the teenagers!
+          </p>
+          <button id="btn_start" class="pulse">Start</button>
+        </div>
         <div id="game_over" class="hidden">
             <h1 class="tekst">Game Over</h1>
         </div>
         <div id="level_complete" class="hidden"></div>
       </div>
     </div>
+     <audio id="sound_baby" src="Audio/baby-click.mp3" controls></audio>
+    <audio id="sound_teenager" src="Audio/teenager-click.mp3" controls></audio>
+    <audio id="sound_baggrund" src="Audio/baggrund.mp3" controls></audio>
+    <audio id="sound_gameover" src="Audio/game-over.mp3" controls></audio>
+    <audio id="sound_gamestart" src="Audio/game-start.mp3" controls></audio>
     <script src="app.js"></script>
   </body>
 </html>

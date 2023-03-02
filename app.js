@@ -11,24 +11,35 @@ window.addEventListener("load", start);
 
 function start() {
   console.log("start virker");
+  document.querySelector("#btn_start").addEventListener("click", startGame);
   //===============start animationer=========//
 }
-document.querySelector("#baby_container").classList.add("Baby_animation");
-document
-  .querySelector("#teenager_container")
-  .classList.add("teenager_animation");
-document
-  .querySelector("#teenager_container3")
-  .classList.add("teenager_animation3");
 
-// Registrer click
-document.querySelector("#baby_container").addEventListener("click", clickBaby);
-document
-  .querySelector("#teenager_container")
-  .addEventListener("click", clickteenager);
-document
-  .querySelector("#teenager_container3")
-  .addEventListener("click", clickteenager3);
+function startGame() {
+  document.querySelector("#sound_gamestart").play();
+
+  document.querySelector("#start").classList.add("hidden");
+
+  document.querySelector("#baby_container").classList.add("Baby_animation");
+  document
+    .querySelector("#teenager_container")
+    .classList.add("teenager_animation");
+  document
+    .querySelector("#teenager_container3")
+    .classList.add("teenager_animation3");
+
+  // Registrer click
+  document
+    .querySelector("#baby_container")
+    .addEventListener("click", clickBaby);
+  document
+    .querySelector("#teenager_container")
+    .addEventListener("click", clickteenager);
+  document
+    .querySelector("#teenager_container3")
+    .addEventListener("click", clickteenager3);
+  document.querySelector("#sound_baggrund").play();
+}
 
 //=============+--funktioner=============//
 function incrementPoints() {
@@ -49,11 +60,15 @@ function clickBaby() {
   point = point + 10;
   incrementPoints();
   console.log(point);
+  document
+    .querySelector("#baby_container")
+    .removeEventListener("click", clickBaby);
   document.querySelector("#baby_container").classList.add("paused");
   document.querySelector("#baby_sprite").classList.add("babyclick");
   document
     .querySelector("#baby_container")
     .addEventListener("animationend", babyGone);
+  document.querySelector("#sound_baby").play();
 }
 function babyGone() {
   document
@@ -91,6 +106,7 @@ function clickteenager() {
   document
     .querySelector("#teenager_container")
     .addEventListener("animationend", teenagerGone);
+  document.querySelector("#sound_teenager").play();
 }
 function clickteenager3() {
   console.log("Click teenager3");
@@ -106,6 +122,7 @@ function clickteenager3() {
   document
     .querySelector("#teenager_container3")
     .addEventListener("animationend", teenagerGone3);
+  document.querySelector("#sound_teenager").play();
 }
 
 function decrementLives() {
@@ -168,9 +185,31 @@ function teenagerGone3() {
 function gameOver() {
   console.log(game_over);
   document.querySelector("#game_over").classList.remove("hidden");
-  displayPoints();
+  document.querySelector("#sound_gameover").play();
+  stopGame();
 }
 
-function displayPoints() {
-  document.querySelector("#point").textContent = point;
+function stopGame() {
+  document.querySelector("#sound_baggrund").pause();
+
+  // stop animationer
+  document.querySelector("#baby_container").classList.remove("baby_animation");
+  document
+    .querySelector("#teenager_container")
+    .classList.remove("teenager_animation");
+  document
+    .querySelector("#teenager_container3")
+    .classList.remove("teenager_animation3");
+
+  // Fjern click
+  document
+    .querySelector("#baby_container")
+    .removeEventListener("click", babyClick);
+
+  document
+    .querySelector("#teenager_container")
+    .removeEventListener("click", teenagerClick);
+  document
+    .querySelector("#teenager_container3")
+    .removeEventListener("click", teenager3Click);
 }

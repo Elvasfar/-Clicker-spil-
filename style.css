@@ -137,6 +137,28 @@ img {
 #level_complete.hidden {
   display: none;
 }
+#game.hidden,
+#start.hidden {
+  display: none;
+}
+#start {
+  grid-area: 1 /1;
+  z-index: 999;
+  display: grid;
+  align-content: top;
+  background-image: url(img/level\ complete\ baby.jpg);
+  width: 100%;
+  height: 100%;
+  color: #6118e7;
+}
+h1 {
+  font-size: 5em;
+  text-align: center;
+}
+p {
+  text-align: center;
+  font-size: 2em;
+}
 
 #game_over {
   position: absolute;
@@ -147,7 +169,6 @@ img {
   justify-content: center;
   z-index: 999;
   background-image: url(img/game\ over\ baby.jpg);
-  aspect-ratio: 4/3;
   background-size: cover;
   font-size: xx-large;
   font-weight: bolder;
@@ -160,4 +181,22 @@ img {
   top: 0;
   left: 0;
   cursor: url(pacifier.png);
+}
+.pulse {
+  animation-name: pulse_kf;
+  animation-duration: 0.5s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  animation-direction: alternate;
+}
+
+button {
+  padding: 0.5em 1em;
+  font-size: 2em;
+  margin: auto;
+  background-color: #ffad01;
+  color: #fff4bf;
+  border: 10px solid #ffc72e;
+  cursor: pointer;
+  border-radius: 10px;
 }
