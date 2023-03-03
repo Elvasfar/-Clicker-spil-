@@ -1,6 +1,6 @@
 .Baby_animation {
   animation-name: Baby;
-  animation-duration: 8s;
+  animation-duration: 6s;
   animation-timing-function: linear;
   animation-iteration-count: infinite;
 }
@@ -23,6 +23,122 @@
   }
   100% {
     transform: translate(-1400%, 0%);
+  }
+}
+
+.Baby_animation2 {
+  animation-name: baby2;
+  animation-duration: 5.2s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-delay: 2s;
+}
+@keyframes baby2 {
+  0% {
+    transform: translate(0%, 0%);
+  }
+
+  20% {
+    transform: translate(-250%, 0%);
+  }
+  40% {
+    transform: translate(-400%, -50%);
+  }
+  60% {
+    transform: translate(-700%, -50%);
+  }
+  80% {
+    transform: translate(-1000%, 0%);
+  }
+  100% {
+    transform: translate(-1400%, 100%);
+  }
+}
+
+.Baby_animation3 {
+  animation-name: baby3;
+  animation-duration: 4.5s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-delay: 4s;
+}
+@keyframes baby3 {
+  0% {
+    transform: translate(0%, 0%);
+  }
+
+  20% {
+    transform: translate(-250%, 0%);
+  }
+  40% {
+    transform: translate(-400%, -40%);
+  }
+  60% {
+    transform: translate(-700%, -40%);
+  }
+  80% {
+    transform: translate(-1000%, 80%);
+  }
+  100% {
+    transform: translate(-1400%, 80%);
+  }
+}
+
+.Baby_animation4 {
+  animation-name: baby4;
+  animation-duration: 3.8s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-delay: 6s;
+}
+@keyframes baby4 {
+  0% {
+    transform: translate(0%, 0%);
+  }
+
+  20% {
+    transform: translate(-250%, 0%);
+  }
+  40% {
+    transform: translate(-400%, -10%);
+  }
+  60% {
+    transform: translate(-700%, -10%);
+  }
+  80% {
+    transform: translate(-1000%, 60%);
+  }
+  100% {
+    transform: translate(-1400%, 100%);
+  }
+}
+
+.Baby_animation5 {
+  animation-name: baby5;
+  animation-duration: 3s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-delay: 8s;
+}
+@keyframes baby5 {
+  0% {
+    transform: translate(0%, 0%);
+  }
+
+  20% {
+    transform: translate(-250%, 0%);
+  }
+  40% {
+    transform: translate(-400%, 0%);
+  }
+  60% {
+    transform: translate(-700%, 0%);
+  }
+  80% {
+    transform: translate(-1000%, 75%);
+  }
+  100% {
+    transform: translate(-1400%, 150%);
   }
 }
 
@@ -201,4 +317,36 @@
 
 .paused {
   animation-play-state: paused;
+}
+
+.shrink {
+  animation-name: shrink_kf;
+  animation-duration: 60s;
+  animation-iteration-count: 1;
+  animation-timing-function: linear;
+  animation-fill-mode: forwards;
+}
+
+@keyframes shrink_kf {
+  0% {
+    scale: 1 1;
+    background-color: rgb(255, 254, 247);
+  }
+  50% {
+    background-color: rgb(255, 254, 247);
+  }
+  100% {
+    scale: 1 0;
+    background-color: rgb(255, 254, 247);
+  }
+}
+
+@keyframes pulse_kf {
+  0% {
+    transform: scale(0.8);
+  }
+
+  100% {
+    transform: scale(1);
+  }
 }

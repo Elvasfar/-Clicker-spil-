@@ -12,11 +12,22 @@
   <body>
     <div id="screen">
       <div id="game">
-        <div class="custom-cursor"></div>
         <div id="game_background"></div>
         <div id="game_elements">
           <div id="baby_container" class="Baby_animation">
             <img id="baby_sprite" src="img/Baby.png" alt="" />
+          </div>
+          <div id="baby_container2" class="Baby_animation2">
+            <img id="baby_sprite2" src="img/Baby.png" alt="" />
+          </div>
+          <div id="baby_container3" class="Baby_animation3">
+            <img id="baby_sprite3" src="img/Baby.png" alt="" />
+          </div>
+          <div id="baby_container4" class="Baby_animation4">
+            <img id="baby_sprite4" src="img/Baby.png" alt="" />
+          </div>
+          <div id="baby_container5" class="Baby_animation5">
+            <img id="baby_sprite5" src="img/Baby.png" alt="" />
           </div>
           <div id="baby_med_sut_container">
             <img id="baby_med_sut_sprite" src="img/Baby med sut.png" alt="" />
@@ -52,8 +63,10 @@
             <img id="heart3" src="img/Hjerte1.png" class="active_heart"/>
               </div> 
               <div id="time_board">
+                <div id="time_container">
+                  <div id="time_sprite"></div>
+                </div>
 
-                <!--<a href="https://www.freepik.com/free-vector/blank-business-card-mockup-vector-white-tone_16264082.htm#query=white%20rectangle&position=4&from_view=search&track=ais">Image by rawpixel.com</a> on Freepik-->
             <div id="time_left"></div>
 
           </div> 
@@ -71,15 +84,40 @@
         </div>
         <div id="game_over" class="hidden">
             <h1 class="tekst">Game Over</h1>
+                    <button id="btn_til_start" class="pulse">Go to start</button>
+          <p>
+               Your score: <span id="game_over_point">x</span> points
+
+          </p>
         </div>
-        <div id="level_complete" class="hidden"></div>
+        <div id="level_complete" class="hidden">
+          <h1>Level Complete</h1>
+          <p>Good job!! <br> 
+            You got through the baby madness <br> 
+            with your life intact <br>
+            <br>
+            Your score: <span id="level_complete_point">x</span> points
+          </p>
+                  <button id="btn_til_start2" class="pulse">Go to start</button>
+        </div>
       </div>
     </div>
-     <audio id="sound_baby" src="Audio/baby-click.mp3" controls></audio>
-    <audio id="sound_teenager" src="Audio/teenager-click.mp3" controls></audio>
-    <audio id="sound_baggrund" src="Audio/baggrund.mp3" controls></audio>
-    <audio id="sound_gameover" src="Audio/game-over.mp3" controls></audio>
-    <audio id="sound_gamestart" src="Audio/game-start.mp3" controls></audio>
+     <audio id="sound_baby" src="Audio/baby-click.mp3"></audio>
+    <audio id="sound_teenager" src="Audio/teenager-click.mp3"></audio>
+    <audio id="sound_baggrund" src="Audio/baggrund.mp3"></audio>
+    <audio id="sound_gameover" src="Audio/game-over.mp3"></audio>
+    <audio id="sound_gamestart" src="Audio/game-start.mp3"></audio>
+        <audio id="sound_levelComplete" src="Audio/level-complete.mp3"></audio>
+
     <script src="app.js"></script>
+
+    <!--Img/media attributes-->
+    <!--Level complete baby: <a href="https://www.freepik.com/free-vector/cute-cool-baby-holding-teddy-bear-doll-cartoon-vector-icon-illustration-people-holiday-isolated_28952485.htm#query=baby&position=8&from_view=search&track=sph">Image by catalyststuff</a> on Freepik-->
+  <!--baby med sut: <a href="https://www.freepik.com/free-vector/cute-baby-boss-with-pacifier-cartoon-illustration_14874524.htm#query=baby%20with%20pacifier&position=11&from_view=search&track=ais">Image by catalyststuff</a> on Freepik-->
+  <!-- Game over baby: <a href="https://www.freepik.com/free-vector/cute-baby-gaming-cartoon-vector-icon-illustration-people-technology-icon-concept-isolated-premium_29456477.htm#query=baby%20with%20pacifier&position=15&from_view=search&track=ais">Image by catalyststuff</a> on Freepik-->
+  <!--baby: <a href="https://www.freepik.com/free-vector/cute-baby-crawling-cartoon-character_27187597.htm#query=crawling%20baby&position=36&from_view=search&track=ais">Image by brgfx</a> on Freepik-->
+<!--baggrund2: <a href="https://www.freepik.com/free-vector/empty-room-with-light-yellow-wall-parquet-floor_21196882.htm#query=empty%20room&position=24&from_view=search&track=ais">Image by brgfx</a> on Freepik-->
+<!--Mellemgrund: <a href="https://www.freepik.com/free-vector/three-boxes-full-toys-white_6822405.htm#query=teddybears&position=3&from_view=search&track=sph">Image by brgfx</a> on Freepik-->
+<!--Hjerte1: <a href="https://www.freepik.com/free-vector/heart_2900812.htm#query=heart&position=7&from_view=search&track=sph">Image by rawpixel.com</a> on Freepik-->
   </body>
 </html>

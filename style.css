@@ -42,6 +42,58 @@ img {
   aspect-ratio: 1/1;
 }
 
+#baby_container2 {
+  width: 8%;
+  position: absolute;
+  bottom: 12%;
+  right: -10%;
+  z-index: 2;
+}
+
+#baby_sprite2 {
+  width: 100%;
+  aspect-ratio: 1/1;
+}
+
+#baby_container3 {
+  width: 8%;
+  position: absolute;
+  bottom: 16%;
+  right: -10%;
+  z-index: 2;
+}
+
+#baby_sprite3 {
+  width: 100%;
+  aspect-ratio: 1/1;
+}
+
+#baby_container4 {
+  width: 8%;
+  position: absolute;
+  bottom: 18%;
+  right: -10%;
+  z-index: 2;
+}
+
+#baby_sprite4 {
+  width: 100%;
+  aspect-ratio: 1/1;
+}
+
+#baby_container5 {
+  width: 8%;
+  position: absolute;
+  bottom: 22%;
+  right: -10%;
+  z-index: 2;
+}
+
+#baby_sprite5 {
+  width: 100%;
+  aspect-ratio: 1/1;
+}
+
 #baby_med_sut_container {
   width: 8%;
   height: auto;
@@ -137,6 +189,7 @@ img {
 #level_complete.hidden {
   display: none;
 }
+
 #game.hidden,
 #start.hidden {
   display: none;
@@ -157,7 +210,21 @@ h1 {
 }
 p {
   text-align: center;
-  font-size: 2em;
+  font-size: 1em;
+}
+#level_complete {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-area: 1/1;
+  justify-content: center;
+  z-index: 999;
+  background-image: url(img/Baby\ med\ sut.png);
+  background-size: contain;
+  font-size: xx-large;
+  font-weight: bolder;
+  color: rgb(224, 14, 14);
 }
 
 #game_over {
@@ -173,6 +240,7 @@ p {
   font-size: xx-large;
   font-weight: bolder;
   color: crimson;
+  background-color: azure;
 }
 
 .custom-cursor {
@@ -199,4 +267,23 @@ button {
   border: 10px solid #ffc72e;
   cursor: pointer;
   border-radius: 10px;
+}
+
+#time_container {
+  position: absolute;
+  width: 3%;
+  aspect-ratio: 6/8;
+  background-color: rgba(130, 240, 225, 0.383);
+  top: 6%;
+  left: 50%;
+  z-index: 998;
+}
+
+#time_sprite {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: rgb(109, 223, 238);
+  transform-origin: center bottom;
+  z-index: 997;
 }
