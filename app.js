@@ -19,40 +19,41 @@ function start() {
   document
     .querySelector("#time_container")
     .addEventListener("click", startGame);
-
-  document
-    .querySelector("#btn_til_start")
-    .addEventListener("click", showStartscreen);
-  //===============start animationer=========//
 }
 
 function startGame() {
+  //=============Definer variable og deres startværdier========================//
   point = 0;
   lives = 3;
 
+  //=============Kalder resetLives og resetPoints funktioner, så liv kan nulstilles ved restart uden at reloade siden========================//
   resetLives();
   resetPoints();
 
   console.log("tiden er startet");
+  //=============Fjerner eventlistener, der førte os hertil========================//
   document
     .querySelector("#time_container")
     .removeEventListener("click", startGame);
 
+  //=============Tilføjer animation på eventlistener timeboard========================//
   document.querySelector("#time_sprite").classList.add("shrink");
   document
     .querySelector("#time_sprite")
     .addEventListener("animationend", timeIsUp);
 
+  //=============Starter gamestartlyd========================//
   document.querySelector("#sound_gamestart").play();
 
+  //=============Fjerner startskærm========================//
   document.querySelector("#start").classList.add("hidden");
 
+  //=============Starter alle animationer========================//
   document.querySelector("#baby_container").classList.add("Baby_animation");
   document.querySelector("#baby_container2").classList.add("Baby_animation2");
   document.querySelector("#baby_container3").classList.add("Baby_animation3");
   document.querySelector("#baby_container4").classList.add("Baby_animation4");
   document.querySelector("#baby_container5").classList.add("Baby_animation5");
-
   document
     .querySelector("#teenager_container")
     .classList.add("teenager_animation");
@@ -60,7 +61,7 @@ function startGame() {
     .querySelector("#teenager_container3")
     .classList.add("teenager_animation3");
 
-  // Registrer click
+  // =============Registrer click========================//
   document
     .querySelector("#baby_container")
     .addEventListener("mousedown", clickBaby);
@@ -76,7 +77,6 @@ function startGame() {
   document
     .querySelector("#baby_container5")
     .addEventListener("mousedown", clickBaby5);
-
   document
     .querySelector("#teenager_container")
     .addEventListener("mousedown", clickteenager);
@@ -84,7 +84,7 @@ function startGame() {
     .querySelector("#teenager_container3")
     .addEventListener("mousedown", clickteenager3);
 
-  // registrer animationen når slut i venstre
+  //============== registrer animationen når slut i venstre============//
 
   document
     .querySelector("#baby_container")
@@ -102,14 +102,14 @@ function startGame() {
     .querySelector("#baby_container5")
     .addEventListener("animationiteration", babyEnd5);
 
-  // Spiller baggrundslyd
-
+  //=============Starter baggrundslyd========================//
   document.querySelector("#sound_baggrund").play();
 
+  //==========Fjerner hidden fra gameskærm, så den vises============//
   document.querySelector("#game").classList.remove("hidden");
 }
 
-//=============+--funktioner=============//
+//=============funktion til at få 3 liv ved restart game=============//
 function resetLives() {
   lives = 3;
   document.querySelector("#heart1").classList.remove("broken_heart");
@@ -120,38 +120,46 @@ function resetLives() {
   document.querySelector("#heart3").classList.add("active_heart");
 }
 
+//=============funktion til at nulstille point ved restart game=============//
 function resetPoints() {
   point = 0;
   displayNumber();
 }
 
+//=============Funktion viser startskærm og skjuler game over og level complete=============//
 function showStartscreen() {
   document.querySelector("#start").classList.remove("hidden");
   document.querySelector("#game_over").classList.add("hidden");
   document.querySelector("#level_complete").classList.add("hidden");
 }
 
+//=============funktion til at få point (kalder ny funktion: displayNumber)=============//
 function incrementPoints() {
   console.log(point);
   displayNumber();
 }
 
+//=============funktion til at vise og opdate variablen point=============//
 function displayNumber() {
   console.log("displayNumber");
   document.querySelector("#point").textContent = point;
 }
 
+//=============funktioner kaldt af "click"eventlistener på de forskellige animationer=============//
 function clickBaby() {
   console.log("clickBaby");
   console.log(point);
   point = point + 10;
   incrementPoints();
   console.log(point);
+  //=============Fjerner eventlistener, pauser animationen og tilføjer animation på spriten=============//
   document
     .querySelector("#baby_container")
     .removeEventListener("mousedown", clickBaby);
   document.querySelector("#baby_container").classList.add("paused");
   document.querySelector("#baby_sprite").classList.add("babyclick");
+
+  //=============kalder funktionen babyGone ved animationend(babyen er væk), spiller lyd ved klik og unpauser=============//
   document
     .querySelector("#baby_container")
     .addEventListener("animationend", babyGone);
@@ -159,6 +167,7 @@ function clickBaby() {
   document.querySelector("#baby_container").classList.remove("paused");
 }
 
+//=============gentagelse af 1. clickbaby funktion=============//
 function clickBaby2() {
   console.log("clickBaby");
   console.log(point);
@@ -177,6 +186,7 @@ function clickBaby2() {
   document.querySelector("#baby_container2").classList.remove("paused");
 }
 
+//=============gentagelse af 1. clickbaby funktion=============//
 function clickBaby3() {
   console.log("clickBaby");
   console.log(point);
@@ -195,6 +205,7 @@ function clickBaby3() {
   document.querySelector("#baby_container3").classList.remove("paused");
 }
 
+//=============gentagelse af 1. clickbaby funktion=============//
 function clickBaby4() {
   console.log("clickBaby");
   console.log(point);
@@ -213,6 +224,7 @@ function clickBaby4() {
   document.querySelector("#baby_container4").classList.remove("paused");
 }
 
+//=============gentagelse af 1. clickbaby funktion=============//
 function clickBaby5() {
   console.log("clickBaby");
   console.log(point);
@@ -231,6 +243,7 @@ function clickBaby5() {
   document.querySelector("#baby_container5").classList.remove("paused");
 }
 
+//=============funktion når babyanimationen når enden af skærmen. Kalder decrementPoints og fjerner eventlistener, der førte os hertil=============//
 function babyEnd() {
   console.log("babyEnd");
   console.log(point);
@@ -240,16 +253,18 @@ function babyEnd() {
     .querySelector("#baby_container")
     .removeEventListener("animationiteration", babyEnd);
 
-  // genstart animation
+  // ====================genstart animation===========================//
   document.querySelector("#baby_container").classList.remove("Baby_animation");
   document.querySelector("#baby_container").offsetWidth;
   document.querySelector("#baby_container").classList.add("Baby_animation");
 
+  //=============Tilføjer eventlistener igen=============//
   document
     .querySelector("#baby_container")
     .addEventListener("animationiteration", babyEnd);
 }
 
+//=============gentagelse af 1. babyEnd funktion=============//
 function babyEnd2() {
   console.log("babyEnd");
   console.log(point);
@@ -259,7 +274,6 @@ function babyEnd2() {
     .querySelector("#baby_container2")
     .removeEventListener("animationiteration", babyEnd2);
 
-  // genstart animation
   document
     .querySelector("#baby_container2")
     .classList.remove("Baby_animation2");
@@ -271,6 +285,7 @@ function babyEnd2() {
     .addEventListener("animationiteration", babyEnd2);
 }
 
+//=============gentagelse af 1. babyEnd funktion=============//
 function babyEnd3() {
   console.log("babyEnd");
   console.log(point);
@@ -280,7 +295,6 @@ function babyEnd3() {
     .querySelector("#baby_container3")
     .removeEventListener("animationiteration", babyEnd3);
 
-  // genstart animation
   document
     .querySelector("#baby_container3")
     .classList.remove("Baby_animation3");
@@ -292,6 +306,7 @@ function babyEnd3() {
     .addEventListener("animationiteration", babyEnd3);
 }
 
+//=============gentagelse af 1. babyEnd funktion=============//
 function babyEnd4() {
   console.log("babyEnd");
   console.log(point);
@@ -301,7 +316,6 @@ function babyEnd4() {
     .querySelector("#baby_container4")
     .removeEventListener("animationiteration", babyEnd4);
 
-  // genstart animation
   document
     .querySelector("#baby_container4")
     .classList.remove("Baby_animation4");
@@ -313,6 +327,7 @@ function babyEnd4() {
     .addEventListener("animationiteration", babyEnd4);
 }
 
+//=============gentagelse af 1. babyEnd funktion=============//
 function babyEnd5() {
   console.log("babyEnd");
   console.log(point);
@@ -322,7 +337,6 @@ function babyEnd5() {
     .querySelector("#baby_container5")
     .removeEventListener("animationiteration", babyEnd5);
 
-  // genstart animation
   document
     .querySelector("#baby_container5")
     .classList.remove("Baby_animation5");
@@ -334,6 +348,7 @@ function babyEnd5() {
     .addEventListener("animationiteration", babyEnd5);
 }
 
+//=============funktion til at fratrække point, hvis man har 10 eller flere point og kalder funktion til at opdatere pointene=============//
 function decrementPoints() {
   if (point >= 10) {
     point = point - 10;
@@ -343,6 +358,7 @@ function decrementPoints() {
   displayNumber();
 }
 
+//=============funktion kaldt ved click på animation=============//
 function babyGone() {
   document
     .querySelector("#baby_container")
@@ -365,6 +381,7 @@ function babyGone() {
     .addEventListener("mousedown", clickBaby);
 }
 
+//============= gentagelse af funktion kaldt ved click på animation=============//
 function babyGone2() {
   document
     .querySelector("#baby_container2")
@@ -389,6 +406,7 @@ function babyGone2() {
     .addEventListener("mousedown", clickBaby2);
 }
 
+//============= gentagelse af funktion kaldt ved click på animation=============//
 function babyGone3() {
   document
     .querySelector("#baby_container3")
@@ -413,6 +431,7 @@ function babyGone3() {
     .addEventListener("mousedown", clickBaby3);
 }
 
+//============= gentagelse af funktion kaldt ved click på animation=============//
 function babyGone4() {
   document
     .querySelector("#baby_container4")
@@ -437,6 +456,7 @@ function babyGone4() {
     .addEventListener("mousedown", clickBaby4);
 }
 
+//============= gentagelse af funktion kaldt ved click på animation=============//
 function babyGone5() {
   document
     .querySelector("#baby_container5")
@@ -461,6 +481,7 @@ function babyGone5() {
     .addEventListener("mousedown", clickBaby5);
 }
 
+//============= funktion kaldt af "click" på teenager=============//
 function clickteenager() {
   console.log("Click teenager");
   // Forhindr gentagne clicks
@@ -468,18 +489,23 @@ function clickteenager() {
     .querySelector("#teenager_container")
     .removeEventListener("mousedown", clickteenager);
 
+  //============= Kalder decrementLives til at fratrække liv=============//
   decrementLives();
 
+  //============= pauser objektet og tilføjer animation til spriten og kalder teenagerGone ved animationens afslutning=============//
   document.querySelector("#teenager_container").classList.add("paused");
   document.querySelector("#teenager_sprite").classList.add("teenagerclick");
   document
     .querySelector("#teenager_container")
     .addEventListener("animationend", teenagerGone);
+
+  //============= afspiller lyd ved "click"=============//
   document.querySelector("#sound_teenager").play();
 }
+
+//============= funktion kaldt af "click" på teenager3 (samme kommentarer som ved teenager)=============//
 function clickteenager3() {
   console.log("Click teenager3");
-  // Forhindr gentagne clicks
   document
     .querySelector("#teenager_container3")
     .removeEventListener("mousedown", clickteenager3);
@@ -494,6 +520,7 @@ function clickteenager3() {
   document.querySelector("#sound_teenager").play();
 }
 
+//============= funktion til at fratrække liv, kalde gameover hvis liv = 0 og funktionen displayDecrementedLives =============//
 function decrementLives() {
   console.log("decrementLives");
   lives = lives - 1;
@@ -504,25 +531,25 @@ function decrementLives() {
   displaydecrementedLives();
 }
 
+//============= funktion til at fratrække liv ved at fjerne og tilføje classes og gøre det i den rigtige rækkefølge=============//
 function displaydecrementedLives() {
   console.log(`#heart${lives + 1}`);
   document.querySelector(`#heart${lives + 1}`).classList.remove("active_heart");
   document.querySelector(`#heart${lives + 1}`).classList.add("broken_heart");
 }
 
+//============= funktion kaldt ved clickteenager-funktion=============//
 function teenagerGone() {
   // fjern event der bringer os herind
   document
     .querySelector("#teenager_container")
     .removeEventListener("animationend", teenagerGone);
 
-  // fjern forsvind-animation
+  // fjerner animation
   document.querySelector("#teenager_sprite").classList.remove("teenagerclick");
 
   // fjern pause
   document.querySelector("#teenager_container").classList.remove("paused");
-
-  // genstart falling animation
 
   // gør det muligt at klikke på teenager igen
   document
@@ -530,13 +557,14 @@ function teenagerGone() {
     .addEventListener("mousedown", clickteenager);
 }
 
+//============= funktion kaldt ved clickteenager3-funktion=============//
 function teenagerGone3() {
   // fjern event der bringer os herind
   document
     .querySelector("#teenager_container3")
     .removeEventListener("animationend", teenagerGone3);
 
-  // fjern forsvind-animation
+  // fjerner animation
   document
     .querySelector("#teenager_sprite3")
     .classList.remove("teenager3click");
@@ -544,46 +572,67 @@ function teenagerGone3() {
   // fjern pause
   document.querySelector("#teenager_container3").classList.remove("paused");
 
-  // genstart falling animation
-
   // gør det muligt at klikke på teenager igen
   document
     .querySelector("#teenager_container3")
     .addEventListener("mousedown", clickteenager3);
 }
+
+//============= gameOverfunktion viser gameoverskærm og point ved spilstop =============//
 function gameOver() {
   console.log(game_over);
   document.querySelector("#game_over").classList.remove("hidden");
+
+  //==========spiller gamover lyd============//
   document.querySelector("#sound_gameover").play();
+
+  //========Kalder stopGame funktion=======//
   stopGame();
   document.querySelector("#game_over_point").textContent = point;
 }
 
+//============= levelCompletefunktion viser levelCompleteskærm, fjerner gameskærm og viser point ved spilstop =============//
 function levelComplete() {
   console.log("Level Complete");
+
+  // viser levelcompleteskærm
   document.querySelector("#level_complete").classList.remove("hidden");
+
+  //========Kalder stopGame funktion=======//
   stopGame();
+
+  // skjuler gameskærm
   document.querySelector("#game").classList.add("hidden");
 
+  // spiller levelcomplete-lyd
   document.querySelector("#sound_levelComplete").play();
-  // vis antal points / mønter
+  // vis antal points
   document.querySelector("#level_complete_point").textContent = point;
 }
 
+//============= timeIsUpfunktion=============//
 function timeIsUp() {
   console.log("tiden er gået");
+
+  // Hvis man har liv tilbage kalder den levelComplete
   if (lives >= 1) {
     levelComplete();
   }
 }
 
+//============= stopGamefunktion=============//
 function stopGame() {
+  // fjerner baggrundslyd
   document.querySelector("#sound_baggrund").pause();
-
+  // Fjerner event der fik os herind
   document
     .querySelector("#time_sprite")
-    .addEventListener("animationend", stopGame);
+    .removeEventListener("animationend", stopGame);
+
+  // Fjerner animation på timeboard
   document.querySelector("#time_sprite").classList.remove("shrink");
+
+  // Tilføjer eventlistener igen
   document
     .querySelector("#time_sprite")
     .addEventListener("animationend", stopGame);
@@ -602,7 +651,6 @@ function stopGame() {
   document
     .querySelector("#baby_container5")
     .classList.remove("baby_animation5");
-
   document
     .querySelector("#teenager_container")
     .classList.remove("teenager_animation");
