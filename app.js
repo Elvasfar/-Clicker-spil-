@@ -15,6 +15,9 @@ function start() {
   document
     .querySelector("#btn_til_start2")
     .addEventListener("click", showStartscreen);
+  document
+    .querySelector("#btn_til_start")
+    .addEventListener("click", showStartscreen);
 
   document
     .querySelector("#time_container")
@@ -103,6 +106,7 @@ function startGame() {
     .addEventListener("animationiteration", babyEnd5);
 
   //=============Starter baggrundslyd========================//
+  document.querySelector("#sound_baggrund").volume = 0.7;
   document.querySelector("#sound_baggrund").play();
 
   //==========Fjerner hidden fra gameskærm, så den vises============//
@@ -136,6 +140,7 @@ function showStartscreen() {
 //=============funktion til at få point (kalder ny funktion: displayNumber)=============//
 function incrementPoints() {
   console.log(point);
+  point = point + 10;
   displayNumber();
 }
 
@@ -149,7 +154,6 @@ function displayNumber() {
 function clickBaby() {
   console.log("clickBaby");
   console.log(point);
-  point = point + 10;
   incrementPoints();
   console.log(point);
   //=============Fjerner eventlistener, pauser animationen og tilføjer animation på spriten=============//
